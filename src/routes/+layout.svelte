@@ -1,14 +1,11 @@
 <script lang="ts">
 	import Button from '@smui/button';
-	import type { TopAppBarComponentDev } from '@smui/top-app-bar';
 	import BottomAppBar from '@smui/top-app-bar';
 	import TopAppBar, { Row, Section, Title, AutoAdjust } from '@smui/top-app-bar';
 	import IconButton from '@smui/icon-button';
 	import { Label, Icon } from '@smui/common';
-	import { Svg } from '@smui/common/elements';
-	import { mdiGithub, mdiWeb } from '@mdi/js';
 
-	let topAppBar: TopAppBarComponentDev;
+	let topAppBar;
 
 	let lightTheme =
 		typeof window === 'undefined' || window.matchMedia('(prefers-color-scheme: light)').matches;
@@ -32,7 +29,7 @@
 		<TopAppBar bind:this={topAppBar} variant="static">
 			<Row>
 				<Section>
-					<Title>Mon application</Title>
+					<Title>Espace perso</Title>
 				</Section>
 				<Section align="end" toolbar>
 					<div class="container">
@@ -41,14 +38,10 @@
 						</Button>
 					</div>
 					<IconButton aria-label="GitHub" href="https://github.com/hperrin/svelte-material-ui">
-						<Icon component={Svg} viewBox="0 0 24 24">
-							<path fill="currentColor" d={mdiGithub} />
-						</Icon>
+						
 					</IconButton>
 					<IconButton aria-label="Demo Site" href="https://sveltematerialui.com">
-						<Icon component={Svg} viewBox="0 0 24 24">
-							<path fill="currentColor" d={mdiWeb} />
-						</Icon>
+					
 					</IconButton>
 				</Section>
 			</Row>
@@ -76,28 +69,27 @@
 </div>
 
 <style>
-	#bottom-bar {
-		display: none;
-	}
-
 	.bottom-app-bar-container {
-		width: 100%;
-		margin: 0;
-		overflow: auto;
-		display: inline-block;
-	}
-
-	@media (max-width: 480px) {
+			width: 100%;
+			margin: 0;
+			overflow: auto;
+			
+		}
+	@media screen and (max-width: 800px) {
 		#bottom-bar {
 			display: block;
 			position: fixed;
 			bottom: 0;
 			width: 100%;
 		}
-		.bottom-app-bar-container {
-			max-width: 480px;
-			margin-right: 0;
+		
+	}
+	@media screen and (min-width: 801px) {
+		#bottom-bar {
+			display: none;
 		}
+
+		
 	}
 
 	.flexy {
@@ -107,7 +99,7 @@
 		align-content: space-between;
 		flex-direction: row;
 		align-items: stretch;
-		width: -moz-available; 
+		width: -moz-available;
 		width: -webkit-fill-available;
 	}
 

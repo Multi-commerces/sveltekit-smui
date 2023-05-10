@@ -4,10 +4,10 @@
 
 // Svelte Colors!
 @use '@material/theme/index' as theme with (
-	$primary: #ff3e00,
-	$secondary: #676778,
-	$surface: #fff,
-	$background: #fff,
+	$primary: #313152,
+	$secondary: #23a0e9,
+	$surface: rgb(236, 236, 236),
+	$background: rgb(238, 238, 238),
 	$error: color-palette.$red-900
 );
 
@@ -15,13 +15,14 @@
 
 html,
 body {
-	background-color: theme.$surface;
-	color: theme.$on-surface;
+	background-color: rgb(255, 255, 255);
+	color: black;
 }
 
+
 a {
-	color: #40b3ff;
+	color: #caba23;
 }
 a:visited {
-	color: color.scale(#40b3ff, $lightness: -35%);
+	color: color.scale(#ff0000, $lightness: -35%);
 }
